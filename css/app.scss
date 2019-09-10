@@ -1,0 +1,410 @@
+$tulip-tree: #EEAD35;
+$himalaya: #70671A;
+$cashmere: #E7C4A8;
+
+$body-font: 'Nunito', sans-serif;
+$heading-font: 'Aldrich', sans-serif;
+$pigeon: #B8C4DA;
+$bunting: #101741;
+$perano: #BBD2F4;
+$white: #FAFAFA;
+/*============= globals =================*/
+*,
+*::before,
+*::after {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: inherit;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    font-family: $body-font;
+    font-size: 10px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+}
+p {
+    font-size: 1.6rem;
+}
+img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+section {
+    padding: 5rem 0;
+}
+
+header {
+    width: 100%;
+    height: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.container {
+    width: 100%;
+    max-width: 110rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.btn {
+    background-color: $himalaya;
+    border-radius: 2rem;
+    color: $white;
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    transition: background-color 350ms;
+
+    &:hover {
+        background-color: $bunting;
+    }
+}
+
+/*==================== navigation ====================*/
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+}
+.nav-brand {
+    width: 3rem;
+}
+.menu-icons i {
+    font-size: 3.5rem;
+    color: #FAFAFA;
+    cursor: pointer;
+}
+.close i {
+    color: $perano;
+}
+
+.nav-list {
+    width: 25rem;
+    height: 100vh;
+    background-color: $bunting;
+    position: fixed;
+    top: 0;
+    right: -26rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1500;
+    transition: all 650ms ease-in-out;
+}
+
+.nav-list.active {
+    right: 0;
+}
+
+.close {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+}
+.nav-item {
+    margin: 1.5rem 0;
+}
+.nav-link {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: $perano;
+    transition: all 0.3s;
+
+    &:hover {
+        letter-spacing: 1px;
+        color: $himalaya;
+    }
+}
+
+/*==================== hero ====================*/
+.hero {
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(135deg, rgba(16, 23, 65, 0.7) 0%, rgba(16, 23, 65, 0.9) 100%), url(../img/header-bg.jpg) center no-repeat;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 86%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 86%, 0% 100%);
+
+    /*&::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4.7rem;
+        background: url(../img/wave-small.png) center no-repeat / cover;
+    }
+    */
+    .main-message {
+        width: 100%;
+        max-width: 50rem;
+        color: $pigeon;
+        text-transform: uppercase;
+        transform: translateY(20%);
+
+        h1 {
+            color: $white;
+            font-family: $heading-font;
+            font-size: 4rem;
+            margin: 1rem 0;
+        }
+        h3 {
+            font-size: 1.6rem;
+        }
+        p {
+            text-transform: lowercase;
+        }
+    }
+}
+
+/*==================== experience ====================*/
+.experience {
+    padding: 0;
+    margin: 2rem 0 10rem 0;
+
+    &-title {
+        text-align: center;
+        text-transform: uppercase;
+        margin: 10rem 0;
+        color: $bunting;
+
+        h1 {
+            font-size: 2rem;
+            font-family: $heading-font;
+            margin: .5rem 0 1rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+        }
+        p {
+            text-transform: lowercase;
+        }
+    }
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2.5rem;
+
+    &-item {
+        color: $white;
+        height: 40rem;
+        padding: 5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(135deg, rgba(16, 23, 65, 0.7) 0%, rgba(16, 23, 65, 0.9) 100%);
+            z-index: -1;
+        }
+
+        i {
+            font-size: 4rem;
+            color: $himalaya;
+        }
+        h2 {
+            font-family: $heading-font;
+            font-size: 1.7rem;
+            text-transform: uppercase;
+            margin: 2rem 0;
+        }
+    }
+
+    .star-gazing {
+        background: url(../img/stars.jpg) center no-repeat / cover;
+    }
+    .hiking {
+        background: url(../img/hiking.jpg) center no-repeat / cover;
+    }
+    .camping {
+        background: url(../img/camping.jpg) center no-repeat / cover;
+    }
+}
+
+/*==================== testimonials ====================*/
+.testimonials {
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(135deg, rgba(16, 23, 65, 0.7) 0%, rgba(16, 23, 65, 0.9) 100%), url(../img/testimonials-bg.jpg) center no-repeat;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 86%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 86%, 0% 100%);
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4.7rem;
+    }
+}
+
+.testimonial {
+    width: 100%;
+    color: $white;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    &-quote {
+        position: relative;
+        padding: 0 1.5rem;
+        margin-bottom: 2rem;
+
+        i {
+            position: absolute;
+            top: -8rem;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 6rem;
+            color: $himalaya;
+            opacity: 0.6;
+            z-index: -1;
+        }
+    }
+    &-author img {
+        width: 10rem;
+        height: 10rem;
+        border-radius: 100%;
+        border: 3px solid $himalaya;
+    }
+}
+
+/*==================== adventure ====================*/
+.adventure {
+    padding: 0;
+    margin: 2rem 0 10rem 0;
+
+    &-title {
+        text-align: center;
+        text-transform: uppercase;
+        margin: 10rem 0;
+        color: $bunting;
+
+        h1 {
+            font-size: 2rem;
+            font-family: $heading-font;
+            margin: .5rem 0 1rem;
+        }
+        h3 {
+            font-size: 1.4rem;
+        }
+        p {
+            text-transform: lowercase;
+        }
+    }
+}
+
+.adventure-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 2.5rem;
+
+    p {
+        color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+/*==================== footer ====================*/
+footer {
+    padding: 3rem 0;
+    background-color: $bunting;
+    color: $perano;
+    text-align: center;
+}
+
+/*==================== media queries ====================*/
+@media(min-width: 350px) {
+    .hero .main-message {
+        transform: translateY(50%);
+    }
+}
+
+@media(min-width: 700px) {
+    header {
+        height: 8rem;
+    }
+    .nav-brand {
+        width: 4rem;
+    }
+    .nav-list {
+        width: initial;
+        height: initial;
+        background-color: transparent;
+        position: initial;
+        top: initial;
+        right: initial;
+        flex-direction: row;
+        transition: initial;
+    }
+    .menu-icons {
+        display: none;
+    }
+    .nav-item {
+        margin: 0 2.5rem;
+    }
+    .nav-link {
+        color: $white;
+        position: relative;
+        font-size: 1.3rem;
+        transition: all 350ms;
+
+        &:hover {
+            color: $himalaya;
+            font-weight: bolder;
+        }
+    }
+    .current {
+        color: $himalaya;
+        font-weight: 900;
+        border-bottom: 2px solid $himalaya;
+    }
+
+    .hero {
+        height: 70vh;
+
+        .main-message {
+            transform: translateY(80%);
+        }
+    }
+}
+
+@media(min-height: 1200px) {
+    .hero {
+        height: 80vh;
+    }
+}
